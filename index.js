@@ -1,15 +1,11 @@
-
+function isObject(){
+  return (!!object && object.constructor === Object) || (!!object && object.constructor === Array);
+}
 function printObject(object, body) {
   bodyG = body
-  if (
-    (!!object && object.constructor === Object) ||
-    (!!object && object.constructor === Array)
-  ) {
+  if (isObject()) {
     Object.keys(object).forEach((item, index) => {
-      if (
-        (!!object[item] && object[item].constructor === Object) ||
-        (!!object[item] && object[item].constructor === Array)
-      ) {
+      if (isObject()) {
         body  = bodyG+`${item} :  `;
       } else {
         body  = bodyG+`${item} : ${object[item]}<br>`;
