@@ -7,14 +7,13 @@ function printObject(object, body) {
   if (isObject(object)) {
     Object.keys(object).forEach((item, index) => {
       if (isObject(object[item])) {
-        body  = bodyG+`${item} :  `;
+        body = `${bodyG} ${item} :  `;
       } else {
-        body  = bodyG+`${item} : ${object[item]}<br>`;
+        body = `${bodyG} ${item} : ${object[item]}<br>`;
       }
-       
       printObject(object[item], body );   
     }); 
-  }  
+  }
     
 }     
 
